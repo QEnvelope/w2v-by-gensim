@@ -11,4 +11,4 @@ printable = set(string.printable)
 for line in stdin:
     filter_line = filter(lambda x: x not in printable, line).strip()
     if filter_line != "":
-        print filter_line
+        print(filter_line)

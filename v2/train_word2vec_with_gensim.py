@@ -45,7 +45,7 @@ class MySentences(object):
 
 if __name__ == '__main__':
     if len(sys.argv) != 2:
-        print "Please use python train_with_gensim.py data_path"
+        print("Please use python train_with_gensim.py data_path")
         exit()
     data_path = sys.argv[1]
     begin = time()
@@ -62,4 +62,4 @@ if __name__ == '__main__':
                                   binary=False)
 
     end = time()
-    print "Total procesing time: %d seconds" % (end - begin)
+    print ("Total procesing time: %d seconds" % (end - begin))

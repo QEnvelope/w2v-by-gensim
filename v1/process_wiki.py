@@ -7,8 +7,9 @@ from __future__ import print_function
 
 import logging
 import os.path
-import six
+# import six
 import sys
+sys.path.append("/home/qiyue/qyWindows/D/pyProjects/Wikipedia_Word2vec")
 
 from gensim.corpora import WikiCorpus
 
@@ -31,13 +32,14 @@ if __name__ == '__main__':
     output = open(outp, 'w')
     wiki = WikiCorpus(inp, lemmatize=False, dictionary={})
     for text in wiki.get_texts():
-        if six.PY3:
-            output.write(bytes(' '.join(text), 'utf-8').decode('utf-8') + '\n')
-        #   ###another method###
-        #    output.write(
-        #            space.join(map(lambda x:x.decode("utf-8"), text)) + '\n')
-        else:
-            output.write(space.join(text) + "\n")
+        output.write(bytes(' '.join(text), 'utf-8').decode('utf-8') + '\n')
+        # if six.PY3:
+        #     output.write(bytes(' '.join(text), 'utf-8').decode('utf-8') + '\n')
+        # #   ###another method###
+        # #    output.write(
+        # #            space.join(map(lambda x:x.decode("utf-8"), text)) + '\n')
+        # else:
+        #     output.write(space.join(text) + "\n")
         i = i + 1
         if (i % 10000 == 0):
             logger.info("Saved " + str(i) + " articles")
